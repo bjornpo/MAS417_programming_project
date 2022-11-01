@@ -1,4 +1,9 @@
 import json
+#import UI_mock.py 
+
+#parameters = getUserInput() 
+
+
 
 rawData = '[{"NOK_per_kWh":0.92542,"EUR_per_kWh":0.08906,"EXR":10.391,"time_start":"2022-10-27T00:00:00+02:00",' \
           '"time_end":"2022-10-27T01:00:00+02:00"},{"NOK_per_kWh":0.96771,"EUR_per_kWh":0.09312999999999999,' \
@@ -41,11 +46,28 @@ APIdata = json.loads(rawData)  # convert from Json to dict
 
 
 def getElectricityPrice(userInput):
+    """
+    response = requests.get("https://api.open-notify.org/astros.json") #sends a request to the API endpoint
+    #response = requests.get("https://www.hvakosterstrommen.no/strompris-api",  params=parameters)
+    print(response.status_code) #prints the status code from the request
+    print(response.json())  #prints the data received from the API
+    """
     y = {
         "APIdata": APIdata,
         "HTTP_response": 200
     }
     return y
+
+
+
+"""
+def jprint(obj):
+    # create a formatted string of the Python JSON object
+    text = json.dumps(obj, sort_keys=True, indent=4)
+    print(text)
+
+jprint(response.json())
+"""
 
 
 if __name__ == '__main__':
