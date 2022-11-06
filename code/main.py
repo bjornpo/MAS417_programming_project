@@ -1,11 +1,14 @@
-import UI_mock
-import API_mock
+import UI
+import API
 import generateSTL_mock
+from API import getElectricityPrice
 
 def main():
-    userInput = UI_mock.getUserInput()
-    APIdata = API_mock.getElectricityPrice(userInput)
+    userInput = UI.getUserInput()
+    APIdata = getElectricityPrice(userInput)
 
+    
+    """"
     if(APIdata["HTTP_response"] == 200):
         STL = generateSTL_mock.generateSTL(userInput, APIdata["APIdata"])
         str = "STL file: " + STL["fileName"] + "is ready, and is stored at " + STL["filePath"]
@@ -13,7 +16,7 @@ def main():
     else:
         str = "HTTP error " + APIdata["HTTP_response"]
         print(str)
-
+    """
 
 if __name__ == '__main__':
     main()
