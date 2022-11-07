@@ -1,7 +1,12 @@
 #import json
 import requests
 
-
+dummyUI = {
+    "PriceArea": "NO5",
+    "Year": "2022",
+    "Month": "10",
+    "Day": "27"
+}
 
 
 def createRequestLink(parameters):
@@ -12,8 +17,9 @@ def createRequestLink(parameters):
     link =    "https://www.hvakosterstrommen.no/api/v1/prices/{}/{}-{}_{}.json".format(year, month,day,area)
     #print (link)
     return link
-    
-    
+
+
+
 
 def getElectricityPrice(userInput):
     requestLink = createRequestLink(userInput);
@@ -26,4 +32,4 @@ def getElectricityPrice(userInput):
     
 
 if __name__ == '__main__':
-    getElectricityPrice()
+    print(getElectricityPrice(dummyUI))
