@@ -19,8 +19,11 @@ def getElectricityPrice(userInput):
     response = requests.get(requestLink)  #gets the status code from the request
     statusCode = response.status_code
     jsonData = response.json()  #returns the json file contents from the response in a dict format
-    
-    info = [jsonData, statusCode]
+
+    info = {
+        "APIdata": jsonData,
+        "HTTP_response": statusCode
+    }
     return info
   
 
