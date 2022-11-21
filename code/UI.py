@@ -13,7 +13,6 @@ def getUserInput():
         "Month": month,              #Always two digits, first digit 0 
         "Day": day                 #Always two digits, first digit 0 
     }
-    print(userInput)
     return userInput
 
 def getDate():
@@ -60,7 +59,6 @@ def getDate():
                 check2 = validDateCheck(year, month, day)
                 
                 if check1 and check2:
-                    print(dateInput)  
                     return dateInput
                     correctForm=True
                     break
