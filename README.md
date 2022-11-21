@@ -1,1 +1,6 @@
-# MAS417_programming_project
+# Electricity Price BarChart Generator
+
+
+
+
+
